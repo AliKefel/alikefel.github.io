@@ -2,7 +2,6 @@ import { useRef, useState } from "react"
 
 
 export default function IconButton({ children, text, color, ...props }) {
-    
     const [hovered, setHovered] = useState(false)
     const ref = useRef(null)
     return (

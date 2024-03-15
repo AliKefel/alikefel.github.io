@@ -2,11 +2,13 @@ import React from "react";
 import IconButton from "../components/IconButton";
 
 import {FaGithub} from "react-icons/fa"
-
-import { GrInstagram } from "react-icons/gr";
 import { FaXTwitter } from "react-icons/fa6";
 import { BsLinkedin } from "react-icons/bs";
 import { SiHandshake } from "react-icons/si";
+import { SiLeetcode } from "react-icons/si";
+import { FaHackerrank } from "react-icons/fa6";
+
+
 
 const Home = () => {
   return (
@@ -26,37 +28,37 @@ const Home = () => {
                 </h1>
             </div>
 
-            
-
         </div>
 
         <div className=" ml-6 flex justify-start">
 
             <div className=" flex items-center w-full flex-row mb-36 md:ml-0 md:flex-row justify-start gap-4 pt-5">
-
-                <IconButton onClick={() => window.location.replace("https://github.com/AliKefel")} text="AliKefel" >
-                    <FaGithub size={40} />
-                </IconButton>
+                <a href="https://github.com/AliKefel">
+                    <IconButton text="AliKefel" >
+                        <FaGithub size={40} />
+                    </IconButton>
+                </a>
 
                 <a href="https://www.linkedin.com/in/ali-kefel">
                     <IconButton text="ali-kefel" color="bg-blue-600">
                     <BsLinkedin size={40} />
                     </IconButton>
                 </a>
+
+                <a href="https://www.hackerrank.com/alikefel114">
+                    <IconButton text="ali-kefel" color="bg-gray-500" > 
+                        <FaHackerrank  size={40} />
+                    </IconButton>
+                </a>
                 
-                <IconButton text="/constgenius" 
-                color="bg-gradient-to-tr from-yellow-500 to-purple-500 via-pink-500"
-                >
-                    <GrInstagram size={40} />
-                </IconButton>
-
-
-                <IconButton text="Twitter" color="bg-black">
-                    <FaXTwitter size={40} />
-                </IconButton>
+                <a href="https://leetcode.com/ali_kefel/">
+                    <IconButton text="LeetCode" color="bg-orange-400">
+                        <SiLeetcode size = {40} />
+                    </IconButton>
+                </a>
 
                 <a href="https://app.joinhandshake.com/stu/users/46595477">
-                    <IconButton text="@constGenius" color="bg-black">
+                    <IconButton text="@Ali-Kefel" color="bg-black">
                         <SiHandshake size={40} />
                     </IconButton>
                 </a>
