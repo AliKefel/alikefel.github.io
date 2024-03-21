@@ -4,7 +4,7 @@ const Footer = () => {
 
     <div className='fixed bottom-0 w-full flex-wrap'>
 
-        <footer style ={{backgroundColor: '#0D1821'}} className="bg-white mx-auto shadow mr-0 ">
+        <footer style ={{backgroundColor: '#0D1821' , zIndex:20}} className="bg-white mx-auto shadow mr-0 ">
 
                 <div className="w-screen text-nowrap mx-auto max-w-screen-xl p-5 md:flex md:items-center md:justify-between">
 

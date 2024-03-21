@@ -8,6 +8,7 @@ import {  Route, Routes } from 'react-router-dom'
 import Contact from './pages/Contact'
 import About from './pages/About'
 import Home from './pages/Home'
+import ContactForm from "./pages/Contact-Form";
 
 
 
@@ -32,7 +33,8 @@ function App() {
 
       <Home/>
       <About/>
-      <Contact/>
+      
+      <ContactForm/>
 
       <Footer/>
 
