@@ -46,7 +46,8 @@ export const Experience = () => {
                   </div>
                   <div className="flex items-center gap-2 text-terminal-text font-mono text-sm mt-2 md:mt-0">
                     <Calendar className="w-4 h-4" />
-                    {formatDate(exp.period.start)} - {exp.period.end ? formatDate(exp.period.end) : 'Present'}
+                    {formatDate(exp.period.start)} -{' '}
+                    {exp.period.end ? formatDate(exp.period.end) : 'Present'}
                   </div>
                 </div>
 
@@ -60,7 +61,7 @@ export const Experience = () => {
                 </ul>
 
                 <div className="flex flex-wrap gap-2 mt-4">
-                  {exp.tech.map((tech) => (
+                  {exp.tech.map(tech => (
                     <span
                       key={tech}
                       className="px-3 py-1 bg-terminal-bg border border-terminal-border rounded text-sm text-terminal-accent font-mono"
@@ -77,4 +78,3 @@ export const Experience = () => {
     </Section>
   );
 };
-

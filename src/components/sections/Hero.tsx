@@ -29,7 +29,7 @@ export const Hero = () => {
       }, 50);
     } else if (isDeleting && displayText.length === 0) {
       setIsDeleting(false);
-      setCurrentRole((prev) => (prev + 1) % roles.length);
+      setCurrentRole(prev => (prev + 1) % roles.length);
     }
 
     return () => clearTimeout(timeout);
@@ -44,7 +44,10 @@ export const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-4 md:px-8 relative overflow-hidden">
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center px-4 md:px-8 relative overflow-hidden"
+    >
       {/* Animated background */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(88,166,255,0.1),transparent_50%)]"></div>
@@ -86,9 +89,7 @@ export const Hero = () => {
           </div>
           <p className="text-lg md:text-xl text-terminal-text max-w-2xl mx-auto font-mono">
             <span className="terminal-prompt">&gt;</span>{' '}
-            <span className="terminal-output">
-              Building 
-            </span>
+            <span className="terminal-output">Building</span>
             {/* modern web applications with React, TypeScript, and Node.js.
               Passionate about clean code, user experience, and continuous learning. */}
           </p>
@@ -129,4 +130,3 @@ export const Hero = () => {
     </section>
   );
 };
-

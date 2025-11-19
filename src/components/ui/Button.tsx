@@ -23,11 +23,13 @@ export const Button = ({
   disabled = false,
   showArrow = false,
 }: ButtonProps) => {
-  const baseStyles = 'font-mono font-semibold rounded transition-all duration-300 flex items-center gap-2 justify-center';
-  
+  const baseStyles =
+    'font-mono font-semibold rounded transition-all duration-300 flex items-center gap-2 justify-center';
+
   const variants = {
     primary: 'bg-terminal-accent text-white hover:bg-terminal-accent/80 hover:glow-effect',
-    secondary: 'bg-terminal-surface text-terminal-text border-terminal-border border hover:bg-terminal-border',
+    secondary:
+      'bg-terminal-surface text-terminal-text border-terminal-border border hover:bg-terminal-border',
     outline: 'border-terminal-border border text-terminal-accent hover:bg-terminal-surface',
   };
 
@@ -52,4 +54,3 @@ export const Button = ({
     </motion.button>
   );
 };
-

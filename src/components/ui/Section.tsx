@@ -32,4 +32,3 @@ export const Section = ({ id, title, children, className = '' }: SectionProps) =
     </section>
   );
 };
-

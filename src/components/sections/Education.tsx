@@ -40,7 +40,8 @@ export const Education = () => {
 
               <div className="flex items-center gap-2 text-terminal-text font-mono text-sm mb-4">
                 <Calendar className="w-4 h-4" />
-                {formatDate(edu.period.start)} - {edu.period.end ? formatDate(edu.period.end) : 'Present'}
+                {formatDate(edu.period.start)} -{' '}
+                {edu.period.end ? formatDate(edu.period.end) : 'Present'}
               </div>
 
               {edu.gpa && (
@@ -125,4 +126,3 @@ export const Education = () => {
     </Section>
   );
 };
-

@@ -36,12 +36,12 @@ export const Contact = () => {
       // Formspree endpoint - Replace 'YOUR_FORM_ID' with your actual Formspree form ID
       // Get your form ID from https://formspree.io/forms/YOUR_FORM_ID
       const formspreeEndpoint = 'https://formspree.io/f/xkgyjppb';
-      
+
       const response = await fetch(formspreeEndpoint, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Accept': 'application/json',
+          Accept: 'application/json',
         },
         body: JSON.stringify({
           name: data.name,
@@ -88,8 +88,8 @@ export const Contact = () => {
               <p className="text-terminal-text mb-6 leading-relaxed">
                 <span className="terminal-prompt">&gt;</span>{' '}
                 <span className="terminal-output">
-                  I'm always open to discussing new projects, creative ideas, or opportunities
-                  to be part of your visions. Feel free to reach out!
+                  I'm always open to discussing new projects, creative ideas, or opportunities to be
+                  part of your visions. Feel free to reach out!
                 </span>
               </p>
             </div>
@@ -205,7 +205,8 @@ export const Contact = () => {
                   className="p-4 bg-terminal-error/20 border border-terminal-error rounded flex items-center gap-2 text-terminal-error font-mono"
                 >
                   <AlertCircle className="w-5 h-5" />
-                  <span className="terminal-prompt">&gt;</span> Error sending message. Please try again.
+                  <span className="terminal-prompt">&gt;</span> Error sending message. Please try
+                  again.
                 </motion.div>
               )}
 
@@ -235,4 +236,3 @@ export const Contact = () => {
     </Section>
   );
 };
-

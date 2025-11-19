@@ -12,13 +12,16 @@ export const ProjectImage = ({ src, alt, className = '', variant = 'card' }: Pro
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
 
-  const baseClasses = variant === 'card' 
-    ? 'w-full h-48 object-cover rounded-t-lg border-b border-terminal-border'
-    : 'w-full h-auto max-h-96 object-contain rounded-lg border border-terminal-border mb-4';
+  const baseClasses =
+    variant === 'card'
+      ? 'w-full h-48 object-cover rounded-t-lg border-b border-terminal-border'
+      : 'w-full h-auto max-h-96 object-contain rounded-lg border border-terminal-border mb-4';
 
   if (hasError) {
     return (
-      <div className={`${baseClasses} bg-terminal-bg flex items-center justify-center ${className}`}>
+      <div
+        className={`${baseClasses} bg-terminal-bg flex items-center justify-center ${className}`}
+      >
         <span className="text-terminal-text/50 font-mono text-sm">
           <span className="terminal-prompt">&gt;</span> Image not available
         </span>
@@ -29,7 +32,9 @@ export const ProjectImage = ({ src, alt, className = '', variant = 'card' }: Pro
   return (
     <div className={`relative overflow-hidden ${className}`}>
       {isLoading && (
-        <div className={`${baseClasses} bg-terminal-bg flex items-center justify-center absolute inset-0`}>
+        <div
+          className={`${baseClasses} bg-terminal-bg flex items-center justify-center absolute inset-0`}
+        >
           <span className="text-terminal-text/50 font-mono text-sm animate-pulse">
             <span className="terminal-prompt">&gt;</span> Loading...
           </span>
@@ -52,4 +57,3 @@ export const ProjectImage = ({ src, alt, className = '', variant = 'card' }: Pro
     </div>
   );
 };
-

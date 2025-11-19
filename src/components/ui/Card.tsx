@@ -24,4 +24,3 @@ export const Card = ({ children, className = '', hover = true, delay = 0, onClic
     </motion.div>
   );
 };
-

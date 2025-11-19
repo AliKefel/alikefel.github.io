@@ -19,7 +19,7 @@ export const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-      
+
       // Update active section based on scroll position
       const sections = navItems.map(item => item.href.substring(1));
       const current = sections.find(section => {
@@ -71,7 +71,7 @@ export const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
+            {navItems.map(item => (
               <motion.button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
@@ -115,7 +115,7 @@ export const Navbar = () => {
             className="md:hidden bg-terminal-surface border-t border-terminal-border"
           >
             <div className="px-4 py-4 space-y-4">
-              {navItems.map((item) => (
+              {navItems.map(item => (
                 <motion.button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
@@ -136,4 +136,3 @@ export const Navbar = () => {
     </motion.nav>
   );
 };
-

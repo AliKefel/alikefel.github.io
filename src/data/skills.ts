@@ -3,7 +3,19 @@ import type { Skill } from '../types/portfolio';
 export const skills: Skill[] = [
   {
     category: 'Languages',
-    technologies: ['Java', 'Python', 'C/C++', 'SQL (Postgres, MySQL)', 'JavaScript', 'HTML/CSS', 'Scheme', 'Prolog', 'Assembly (MIPS, x86-64)', 'MATLAB', 'TypeScript'],
+    technologies: [
+      'Java',
+      'Python',
+      'C/C++',
+      'SQL (Postgres, MySQL)',
+      'JavaScript',
+      'HTML/CSS',
+      'Scheme',
+      'Prolog',
+      'Assembly (MIPS, x86-64)',
+      'MATLAB',
+      'TypeScript',
+    ],
   },
   {
     category: 'Frameworks',
@@ -15,11 +27,26 @@ export const skills: Skill[] = [
   },
   {
     category: 'Frontend',
-    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'HTML/CSS', 'JavaScript'],
+    technologies: [
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'Framer Motion',
+      'HTML/CSS',
+      'JavaScript',
+    ],
   },
   {
     category: 'Backend',
-    technologies: ['Node.js', 'Express', 'Python', 'Django', 'FastAPI', 'Ruby on Rails', 'REST APIs'],
+    technologies: [
+      'Node.js',
+      'Express',
+      'Python',
+      'Django',
+      'FastAPI',
+      'Ruby on Rails',
+      'REST APIs',
+    ],
   },
   {
     category: 'Database',
@@ -34,4 +61,3 @@ export const skills: Skill[] = [
     technologies: ['Git', 'Webpack', 'Vite', 'Jest', 'Cypress', 'Figma', 'Playwright', 'Selenium'],
   },
 ];
-

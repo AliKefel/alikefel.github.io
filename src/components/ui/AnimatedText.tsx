@@ -43,4 +43,3 @@ export const AnimatedText = ({
     </motion.div>
   );
 };
-

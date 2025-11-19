@@ -101,7 +101,7 @@ export const About = () => {
                       </h3>
                     </div>
                     <div className="flex flex-wrap gap-2">
-                      {skill.technologies.map((tech) => (
+                      {skill.technologies.map(tech => (
                         <span
                           key={tech}
                           className="px-3 py-1 bg-terminal-surface border border-terminal-border rounded text-sm text-terminal-text font-mono hover:border-terminal-accent transition-colors"
@@ -120,4 +120,3 @@ export const About = () => {
     </Section>
   );
 };
-

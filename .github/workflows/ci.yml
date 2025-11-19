@@ -1,0 +1,128 @@
+name: CI - Lint, Format & Health Checks
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint-and-format:
+    name: Lint & Format Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run ESLint
+        run: npm run lint
+
+      - name: Check Prettier formatting
+        run: npm run format:check
+
+      - name: TypeScript type check
+        run: npm run type-check
+
+  health-checks:
+    name: Service Health Checks
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check Formspree status
+        run: |
+          echo "Checking Formspree service status..."
+          FORMSPREE_STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://formspree.io/health || echo "000")
+          if [ "$FORMSPREE_STATUS" = "200" ] || [ "$FORMSPREE_STATUS" = "301" ] || [ "$FORMSPREE_STATUS" = "302" ]; then
+            echo "Formspree is accessible (HTTP $FORMSPREE_STATUS)"
+          else
+            echo "Error:Formspree check returned HTTP $FORMSPREE_STATUS"
+            echo "This might be normal if the health endpoint doesn't exist"
+          fi
+
+      - name: Check PostHog status
+        run: |
+          echo "Checking PostHog service status..."
+          POSTHOG_STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://app.posthog.com || echo "000")
+          if [ "$POSTHOG_STATUS" = "200" ] || [ "$POSTHOG_STATUS" = "301" ] || [ "$POSTHOG_STATUS" = "302" ]; then
+            echo "PostHog is accessible (HTTP $POSTHOG_STATUS)"
+          else
+            echo "ErrorPostHog check returned HTTP $POSTHOG_STATUS"
+            echo "This might be normal if the endpoint requires authentication"
+          fi
+
+      - name: Validate Formspree form ID
+        run: |
+          echo "Validating Formspree form ID in Contact.tsx..."
+          FORM_ID=$(grep -oP "formspree\.io/f/\K[^']+" src/components/sections/Contact.tsx || echo "")
+          if [ -z "$FORM_ID" ]; then
+            echo "❌ Formspree form ID not found in Contact.tsx"
+            exit 1
+          elif [ "$FORM_ID" = "YOUR_FORM_ID" ]; then
+            echo "⚠️ Formspree form ID is still set to placeholder value"
+            exit 1
+          else
+            echo "✅ Formspree form ID found: $FORM_ID"
+          fi
+
+      - name: Check environment variables
+        run: |
+          echo "Checking for required environment variable references..."
+          if grep -q "VITE_POSTHOG_KEY" src/main.tsx; then
+            echo "✅ PostHog environment variable reference found"
+          else
+            echo "⚠️ PostHog environment variable reference not found"
+          fi
+
+  build-check:
+    name: Build Verification
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build
+        env:
+          VITE_POSTHOG_KEY: ${{ secrets.VITE_POSTHOG_KEY || 'test-key' }}
+          VITE_POSTHOG_HOST: ${{ secrets.VITE_POSTHOG_HOST || 'https://app.posthog.com' }}
+
+      - name: Verify build output
+        run: |
+          if [ ! -d "dist" ]; then
+            echo "❌ Build failed: dist directory not found"
+            exit 1
+          fi
+
+          if [ ! -f "dist/index.html" ]; then
+            echo "❌ Build failed: index.html not found"
+            exit 1
+          fi
+
+          echo "✅ Build successful"
+          echo "Build output:"
+          ls -lh dist/

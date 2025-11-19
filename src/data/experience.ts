@@ -15,7 +15,17 @@ export const experiences: Experience[] = [
       'Designed and implemented a modular web scraping architecture with Playwright and Selenium, enabling scalable extraction of instant auto-shipping quotes across multiple transporter portals',
       'Developed service-based content pages, integrating DOT and FMCSA datasets into the Rails backend to improve consumer trust and compliance visibility',
     ],
-    tech: ['React', 'Ruby on Rails', 'AWS', 'Terraform', 'Hugo', 'MUI', 'Tailwind CSS', 'Playwright', 'Selenium'],
+    tech: [
+      'React',
+      'Ruby on Rails',
+      'AWS',
+      'Terraform',
+      'Hugo',
+      'MUI',
+      'Tailwind CSS',
+      'Playwright',
+      'Selenium',
+    ],
   },
   {
     id: '2',
@@ -46,4 +56,3 @@ export const experiences: Experience[] = [
     tech: ['C++', 'Arduino', 'KiCad', 'Electronics'],
   },
 ];
-

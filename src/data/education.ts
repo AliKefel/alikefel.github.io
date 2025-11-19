@@ -12,7 +12,7 @@ export const education: Education[] = [
     },
     // gpa: '3.72/4.0',
     achievements: [
-      '4x Dean\'s List',
+      "4x Dean's List",
       'NAmU Scholarship ($58,000)',
       'Blackstone Launchpad Internship Program',
     ],
@@ -53,4 +53,3 @@ export const organizations: string[] = [
   'SoDa',
   'Google Student Developer Association',
 ];
-
