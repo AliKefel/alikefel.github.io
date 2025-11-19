@@ -87,9 +87,10 @@ export const Hero = () => {
           <p className="text-lg md:text-xl text-terminal-text max-w-2xl mx-auto font-mono">
             <span className="terminal-prompt">&gt;</span>{' '}
             <span className="terminal-output">
-              Building modern web applications with React, TypeScript, and Node.js.
-              Passionate about clean code, user experience, and continuous learning.
+              Building 
             </span>
+            {/* modern web applications with React, TypeScript, and Node.js.
+              Passionate about clean code, user experience, and continuous learning. */}
           </p>
         </motion.div>
 

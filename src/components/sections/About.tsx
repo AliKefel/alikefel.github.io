@@ -25,7 +25,7 @@ export const About = () => {
             <h3 className="text-2xl font-bold mb-4 terminal-command">
               <span className="terminal-prompt">&gt;</span> About Me
             </h3>
-            <p className="text-terminal-text mb-4 leading-relaxed">
+            {/* <p className="text-terminal-text mb-4 leading-relaxed">
               <span className="terminal-prompt">&gt;</span>{' '}
               <span className="terminal-output">
                 I'm a passionate software engineer with a love for creating elegant solutions
@@ -39,7 +39,7 @@ export const About = () => {
                 When I'm not coding, you'll find me exploring new technologies, contributing to
                 open-source projects, or sharing knowledge with the developer community.
               </span>
-            </p>
+            </p> */}
           </Card>
         </AnimatedText>
 

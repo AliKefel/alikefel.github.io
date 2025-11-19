@@ -49,7 +49,7 @@ export const Projects = () => {
 
       {/* Projects Grid */}
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <AnimatePresence mode="wait">
+        <AnimatePresence>
           {filteredProjects.map((project, index) => (
             <motion.div
               key={project.id}

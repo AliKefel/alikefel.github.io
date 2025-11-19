@@ -1,73 +1,137 @@
-# React + TypeScript + Vite
+# Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Live Link
 
-Currently, two official plugins are available:
+Visit the live site: [https://alikefel.github.io](https://alikefel.github.io)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Tech Stack
 
-## React Compiler
+### Core Framework
+- **React 19.2.0** - UI library
+- **TypeScript 5.9.3** - Type safety
+- **Vite 7.2.2** - Build tool and dev server
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Styling
+- **Tailwind CSS 4.1.17** - Utility-first CSS framework
+- **@tailwindcss/vite** - Tailwind CSS Vite plugin
+- **PostCSS 8.5.6** - CSS processing
+- **Autoprefixer 10.4.22** - CSS vendor prefixing
 
-## Expanding the ESLint configuration
+### Animation & UI
+- **Framer Motion 12.23.24** - Animation library
+- **Lucide React 0.554.0** - Icon library
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Forms & Validation
+- **React Hook Form 7.66.1** - Form state management
+- **Zod 4.1.12** - Schema validation
+- **@hookform/resolvers 5.2.2** - Form validation resolvers
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Analytics & Services
+- **PostHog 1.296.0** - Product analytics and feature flags
+- **Formspree** - Form submission service
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Development Tools
+- **ESLint 9.39.1** - Code linting
+- **TypeScript ESLint 8.46.3** - TypeScript-specific linting
+- **React Hooks ESLint Plugin** - React hooks linting
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Structure
+
+```
+src/
+├── components/
+│   ├── ui/                 # Reusable UI components
+│   │   ├── Button.tsx
+│   │   ├── Card.tsx
+│   │   ├── Section.tsx
+│   │   ├── AnimatedText.tsx
+│   │   ├── GradientText.tsx
+│   │   └── ProjectImage.tsx
+│   ├── sections/           # Main page sections
+│   │   ├── Hero.tsx
+│   │   ├── About.tsx
+│   │   ├── Projects.tsx
+│   │   ├── Experience.tsx
+│   │   ├── Education.tsx
+│   │   └── Contact.tsx
+│   └── layout/
+│       ├── Navbar.tsx
+│       ├── Footer.tsx
+│       └── Layout.tsx
+├── data/                   # Portfolio content
+│   ├── projects.ts
+│   ├── experience.ts
+│   ├── education.ts
+│   └── skills.ts
+├── types/                  # TypeScript definitions
+│   └── portfolio.ts
+├── hooks/                  # Custom hooks
+│   └── useScrollAnimation.ts
+├── lib/                    # Utilities
+│   └── posthog.ts
+├── App.tsx
+├── main.tsx
+└── index.css
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+##  Features
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **Terminal/Computer Theme** - Unique terminal-inspired design with command prompts
+- **Smooth Animations** - Framer Motion powered animations throughout
+- **Responsive Design** - Mobile-first, works on all devices
+- **Project Showcase** - Filterable project gallery with images
+- **Contact Form** - Formspree integration for form submissions
+- **Analytics** - PostHog integration for traffic and user behavior tracking
+- **Type Safety** - Full TypeScript implementation
+- **Performance Optimized** - Lazy loading, code splitting, optimized images
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🔗 Useful Links
+
+### Formspree Dashboard
+- **Dashboard**: [https://formspree.io/forms](https://formspree.io/forms)
+- **Documentation**: [https://help.formspree.io](https://help.formspree.io)
+- **My Form ID**: `xkgyjppb` (update in Contact.tsx if needed)
+
+### PostHog Dashboard
+- **Dashboard**: [https://app.posthog.com](https://app.posthog.com)
+- **Documentation**: [https://posthog.com/docs](https://posthog.com/docs)
+
+### Other Resources
+- **Vite Documentation**: [https://vite.dev](https://vite.dev)
+- **React Documentation**: [https://react.dev](https://react.dev)
+- **Tailwind CSS**: [https://tailwindcss.com](https://tailwindcss.com)
+- **Framer Motion**: [https://www.framer.com/motion](https://www.framer.com/motion)
+- **TypeScript**: [https://www.typescriptlang.org](https://www.typescriptlang.org)
+
+### Updating Content
+All portfolio content is stored in the `src/data/` directory:
+- `projects.ts` - Project information
+- `experience.ts` - Work experience
+- `education.ts` - Education and achievements
+- `skills.ts` - Technical skills
+
+## Libraries & Purpose
+
+| Library | Purpose |
+|---------|---------|
+| **React** | UI component framework |
+| **TypeScript** | Type-safe JavaScript |
+| **Vite** | Fast build tool and dev server |
+| **Tailwind CSS** | Utility-first CSS framework |
+| **Framer Motion** | smooth animations and transitions |
+| **Lucide React** | icon library |
+| **React Hook Form** | Performant form handling |
+| **Zod** | Runtime type validation |
+| **PostHog** | Product analytics and user tracking |
+| **Formspree** | Form submission handling |
+
+
+## 👤 Author
+
+**Ali Kefel**
+- GitHub: [@AliKefel](https://github.com/AliKefel)
+- Email: alikefel114@gmail.com
+
+---
+
+Built with React, TypeScript, and Tailwind CSS
