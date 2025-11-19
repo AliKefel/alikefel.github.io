@@ -28,11 +28,17 @@ export const Hero = () => {
         setDisplayText(role.substring(0, displayText.length - 1));
       }, 50);
     } else if (isDeleting && displayText.length === 0) {
-      setIsDeleting(false);
-      setCurrentRole(prev => (prev + 1) % roles.length);
+      timeout = setTimeout(() => {
+        setIsDeleting(false);
+        setCurrentRole(prev => (prev + 1) % roles.length);
+      }, 0);
     }
 
-    return () => clearTimeout(timeout);
+    return () => {
+      if (timeout) {
+        clearTimeout(timeout);
+      }
+    };
   }, [displayText, isDeleting, currentRole]);
 
   const scrollToProjects = () => {

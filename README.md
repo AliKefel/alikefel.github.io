@@ -1,5 +1,8 @@
 # Portfolio Website
 
+[![CI - Lint, Format & Health Checks](https://github.com/alikefel/alikefel.github.io/actions/workflows/ci.yml/badge.svg)](https://github.com/alikefel/alikefel.github.io/actions/workflows/ci.yml)
+[![Deploy to GitHub Pages](https://github.com/alikefel/alikefel.github.io/actions/workflows/build.yml/badge.svg)](https://github.com/alikefel/alikefel.github.io/actions/workflows/build.yml)
+
 ## Live Link
 
 Visit the live site: [https://alikefel.github.io](https://alikefel.github.io)

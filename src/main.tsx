@@ -9,7 +9,7 @@ const posthogHost = import.meta.env.VITE_POSTHOG_HOST || 'https://app.posthog.co
 
 const options = {
   api_host: posthogHost,
-  loaded: (posthog: any) => {
+  loaded: (posthog: { debug: () => void }) => {
     if (import.meta.env.MODE === 'development') {
       posthog.debug();
     }
